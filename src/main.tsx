@@ -7,10 +7,11 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 const queryClient = new QueryClient();
 
 async function enableMocking() {
-  if (import.meta.env.DEV) {
-    const { worker } = await import('./mocks/browser');
-    return worker.start();
-  }
+  const { worker } = await import('./mocks/browser');
+  return worker.start({
+    // @ts-ignore
+    onUnhandledRequest: 'bypass', // Don't warn on unhandled requests like Vercel analytics
+  });
 }
 
 enableMocking().then(() => {
