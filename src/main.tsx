@@ -9,6 +9,7 @@ const queryClient = new QueryClient();
 async function enableMocking() {
   const { worker } = await import('./mocks/browser');
   return worker.start({
+    // @ts-ignore
     onUnhandledRequest: 'bypass', // Don't warn on unhandled requests like Vercel analytics
   });
 }
