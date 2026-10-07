@@ -1,0 +1,11 @@
+import { GameCanvas } from './ui/components/GameCanvas';
+
+function App() {
+  return (
+    <div style={{ width: '100vw', height: '100vh', backgroundColor: '#000' }}>
+      <GameCanvas />
+    </div>
+  );
+}
+
+export default App;
