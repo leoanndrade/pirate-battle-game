@@ -50,7 +50,7 @@ export const HUD: React.FC = () => {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        color: '#fff',
+        color: '#f8e4b5', // theme.cream
         fontFamily: 'sans-serif',
         fontWeight: 'bold',
         textShadow: '2px 2px 0px #000',
